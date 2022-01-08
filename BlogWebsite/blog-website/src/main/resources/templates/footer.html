@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>SarKhan | Home</title>
+    <title>SarKhan | Footer</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,9 +47,30 @@
 
   </style>
  
-  <body  > 
-      <div th:replace="menu :: menu"></div>
-      <div th:replace="about :: about"></div>
-      <div th:replace="footer :: footer"></div>
+  <body  >
+    <div th:fragment="footer">
+  
+      <footer class="site-footer fixed-bottom" style="background-color: black;">
+     
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+           <a href="#">06 Agency</a>
+              </p>
+            </div>
+  
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" target="_blank" href="https://www.facebook.com/serxanbbyv"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" target="_blank" href="https://wa.me/+994552067135"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a class="dribbble" target="_blank" href="https://www.instagram.com/sarkhanvibes/"><i class="fa fa-instagram"></i></a></li> 
+                <li><a class="telegram" target="_blank" href="https://www.t.me/sarkhanvibes"><i class="fa fa-telegram"></i></a></li> 
+              </ul>
+            </div>
+          </div>
+        </div>
+  </footer>
+  </div>
     </body>
 </html>

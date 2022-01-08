@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>SarKhan | Home</title>
+    <title>SarKhan | About</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,9 +47,39 @@
 
   </style>
  
-  <body  > 
-      <div th:replace="menu :: menu"></div>
-      <div th:replace="about :: about"></div>
-      <div th:replace="footer :: footer"></div>
+  <body  > <div th:replace="menu :: menu"></div>
+    <div th:fragment="about">
+     <div class="container jumbotron"  style="margin-top: 20px" >
+        <div class="card text-center">
+    
+            <div class="card-body">
+              <h5 class="card-title"><img id="aboutImg" th:src="@{/assets/sarkhan.jpeg}" alt=""></h5>
+
+              <table>
+               
+                 <tr>
+                     <td>  <h3 id="name" data-toggle="tooltip" title="Mən"><i class="fa fa-user" aria-hidden="true"></i></h3></td>
+                     <td> Sərxan Babayev</td>
+                 </tr>
+                 <tr>
+                    <td><h4 data-toggle="tooltip" title="Yaşım">  <i class="fa fa-calendar-check-o" aria-hidden="true"></i> </h4></td>
+                    <td> 15</td>
+                </tr>
+                <tr>
+                    <td><h3 data-toggle="tooltip" title="İşim"><i  class="fa fa-briefcase" aria-hidden="true">   </i></h3></td>
+                    <td >FullStack Developer</td>
+                </tr>
+                <tr>
+                    <td><h3 data-toggle="tooltip" title="Sənin İP adresin"> <i class="fa fa-terminal" aria-hidden="true"></i> </h3></td>
+                    <td   id="ip-address" ></td>
+                </tr>
+              </table>
+ 
+              <button class="btn btn-success" th:href="@{/contact}">Contact</button>
+            </div>
+           
+          </div>
+     </div>
+     </div>
     </body>
 </html>
