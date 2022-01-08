@@ -2,7 +2,7 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>SarKhan | Home</title>
+    <title>SarKhan | Menu</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,8 +21,26 @@
           text-decoration: none;
       }
   </style>
- 
-  <body  > <div th:replace="menu :: menu"></div>
+  <script>function myFunction() { 
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }</script>
+  <body  > 
+    <div th:fragment="menu">
+    <div class="topnav" id="myTopnav">
+        
+        <a th:href="@{/home}" class="active"><i class="fa fa-code" aria-hidden="true"></i></a>
+         <a th:href="@{/about}">About</a> 
+         <a th:href="@{/contact}">Contact</a> 
+         <a th:href="@{/blog}">Blog</a> 
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+   </div>
     </div>
     </body>
 </html>
