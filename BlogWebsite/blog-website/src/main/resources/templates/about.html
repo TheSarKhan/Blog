@@ -11,42 +11,23 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <script type="text/javascript" th:src="@{/scripts/scripts.js}"></script>
+    <!-- Bootstrap CSS --> <script type="text/javascript" th:src="@{/scripts/script.js}"></script>
     <link th:href="@{/styles/styles.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script> 
+    <script>
+  $.getJSON("https://api.ipify.org?format=json", function(data) {
+    $("#ip-address").html(data.ip);
+})
     </script>
-     <script>
-         function myFunction() { 
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
-     </script>
-      <script> 
-                
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $("#ip-address").html(data.ip);
-    })
-    </script>   
+     <style>
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
 </head>
-  
-  </script>
-  <style>
-      a:hover{
-          text-decoration: none;
-      }
-      .jumbotron{
-          background-color: white;
-      }
    
-
-  </style>
- 
   <body  > <div th:replace="menu :: menu"></div>
     <div th:fragment="about">
      <div class="container jumbotron"  style="margin-top: 20px" >
@@ -75,11 +56,47 @@
                 </tr>
               </table>
  
-              <button class="btn btn-success" th:href="@{/contact}">Contact</button>
+              <button class="btn btn-success" data-toggle="modal" data-target="#myModal"  >Haqqımda</button>
             </div>
            
           </div>
      </div>
+     
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Haqqımda</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+        Hər şey 2018ci ilin sonlarında başladı.
+         O vaxtı birini sevirdim. Xəyanət ilə bitirdi. 
+         O gündən özümə söz verdim intiqam alacağımla bağlı. 
+         Proqramlaşdırma ilə ilk görüşməm burda oldu.
+          Daha sonra bir gün,mənim həyatıma böyük yön verən kurs, <i><a href="https://developia.az/edu/" target="_blank" style="color: red;">Developia</a> </i> ilə tanış oldum.
+          1ci ilimdə artıq müəyyən bir səviyyəyə çatmışdım.Kursun keçdiyi çox şey var idi. Amma mən əlavə də məşğul oldum.
+        Yatmadığım gecələrim oldu. Dərslərimdən şikayət gəldi,müəllimlərimin çoxuna görə etdiklərim mənasız idi :D
+    Sonra yay tətili gəldi. Daha da inkişaf etdim. Online dərs keçdim. Proyektlər satdım. Və ən sonunda kursdan 1ci olaraq məzun olan,
+    ən çox bal toplayan 4 uşaqdan biri oldum. Hal-hazırda da hər gün vaxt tapdıqca öyrənməyə çalışıram.
+Düzü,hazırlıqlara görə çox vaxtım olmur. Amma yenə də,çalışdığım qədər məşğul oluram. Proqramlaşdırma mənim həyatımdır. Oxuduğunuz üçün təşəkkürlər <3    </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Bağla</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
      </div>
+     
+     <div th:replace="footer :: footer"></div>
+  
     </body>
 </html>
