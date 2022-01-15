@@ -11,7 +11,8 @@
 }  
 .topnav {
     overflow: hidden;
-   background-image: url(../assets/navbar.png);
+   background-color: black;
+   border-bottom: 10px solid #007bb6;
    background-repeat: no-repeat;
    background-size: cover;
     
@@ -75,7 +76,7 @@
   .site-footer
 {
   background-color:#26272b;
-  padding:45px 0 20px;
+  padding:15px 0 10px;
   font-size:15px;
   line-height:24px;
   color:#737373;
@@ -246,4 +247,11 @@ a:hover{
 }
 .jumbotron{
     background-color: white;
+}
+#header{
+  font-weight: bold;
+  font-size: 40px;
+}
+#content{
+  font-size: 20px;
 }

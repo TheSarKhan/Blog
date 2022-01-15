@@ -33,6 +33,17 @@
   <body>
       
     <div th:replace="menu :: menu"></div>
+
+    <div class="container jumbotron" style="background-color: antiquewhite;" th:each="content : ${contents}" >
+    <div class="row">
+
+    <div class="col-sm"  >
+    <div id="header" th:text="${content.header}"></div>
+    <div id="content" th:text="${content.text}"></div>
+  </div>
+  </div>
+    </div>
+
     <div th:replace="footer :: footer"></div>  
     </body>
 </html>
