@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://tymeleaf.org">
   <head>
     <title>SarKhan | Home</title>
     <!-- Required meta tags -->
@@ -35,8 +35,10 @@
 </head>
    
   <body  > 
+  
       <div th:replace="menu :: menu"></div> 
       <div class="container jumbotron" style="background-color: yellow;">
+        
       <form action="" method="post">
         <center><h2>Şəkil seç</h2></center>
         
@@ -47,17 +49,22 @@
          
           <center><input type="submit" class="btn btn-success" value="Paylaş"> </center>
     </form>
+     
   </div>
 <div class="jumbotron container" style="background-color: rgb(148, 84, 209);">
-<form action="" method="post">
+   
+<form th:action="@{/new-content}" th:object="${content}"  method="post">
   <center><h2>Mövzu yaz </h2></center>
+ 
   <b><label for="">Mövzu başlığı :</label>  </b>
-  <input type="text" class="form-control">
+  
+  <input type="text" th:field="*{header}"  class="form-control">
   <br>
   <b> <label for="">Mövzu :</label></b>
-  <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+  <textarea name="" th:field="*{text}" class="form-control" id="" cols="30" rows="10"></textarea>
 <center>  <input class="btn btn-success" value="Paylaş" type="submit"> </center>
 </form>
+  
 </div>
 
 
