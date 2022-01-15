@@ -36,14 +36,38 @@
    
   <body  > 
       <div th:replace="menu :: menu"></div> 
+      <div class="container jumbotron" style="background-color: yellow;">
       <form action="" method="post">
-      <div class="form-group">
-        <label for=""></label>
-        <input style="width: 300px;" type="file"
-          class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-        <small id="helpId" class="form-text text-muted">New photo</small>
-      </div>
-      <input type="submit" class="btn btn-success" value="Submit">
+        <center><h2>Şəkil seç</h2></center>
+        
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Şəkil seç</label>
+          </div>
+         
+          <center><input type="submit" class="btn btn-success" value="Paylaş"> </center>
     </form>
+  </div>
+<div class="jumbotron container" style="background-color: rgb(148, 84, 209);">
+<form action="" method="post">
+  <center><h2>Mövzu yaz </h2></center>
+  <b><label for="">Mövzu başlığı :</label>  </b>
+  <input type="text" class="form-control">
+  <br>
+  <b> <label for="">Mövzu :</label></b>
+  <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+<center>  <input class="btn btn-success" value="Paylaş" type="submit"> </center>
+</form>
+</div>
+
+
+
+  <script>
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    </script>
     </body>
 </html>
