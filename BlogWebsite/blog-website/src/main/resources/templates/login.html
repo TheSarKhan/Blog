@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link th:href="@{/styles/styles.css}" rel="stylesheet" />
+    
+    <script type="text/javascript" th:src="@{/scripts/actions.js}"></script> 
+    <title>SarKhan | Login</title>
+</head>
+<body>  
+    <div th:replace="menu :: menu"></div>
+    <center>
+        <div class="container jumbotron">
+          <center> <h1 style="text-align: center;">Giriş</h1> </center>
+          <div th:if="${param.error}"
+          class="alert alert-danger alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          Məlumatları səhv daxil etdiniz
+          </div>
+        
+          
+          <div th:if="${param.logout}"
+          class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          Hesabınızdan uğurla çıxdınız
+          </div>
+  <form th:action="@{/authenticate}"  class="form" method="post">
+      <label for="username">Istifadəçi Adı :</label>
+  <input type="text " name="username" id="username" placeholder="Istifadəçi adı daxil et !" class="form-control">
+  <label for="password">Istifadəçi Şifrəsi :</label>
+  <input type="password"  name="password" id="password" placeholder="Şifrə daxil et !" class="form-control">
+  <center> <button class="btn btn-success" type="submit">Giriş</button>
+  </form>
+   </center>
+        </div> </center>
+  
+  
+  
+     
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ </body>
+</html>
