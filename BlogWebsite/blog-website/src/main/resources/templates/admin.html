@@ -39,11 +39,11 @@
       <div th:replace="menu :: menu"></div> 
       <div class="container jumbotron" style="background-color: yellow;">
         
-      <form action="" method="post">
+      <form enctype="multipart/form-data" th:action="@{/new-photo}" method="post">
         <center><h2>Şəkil seç</h2></center>
         
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
+            <input type="file"  name="file" accept="image/x-png,image/jpeg,image/jpg"  class="custom-file-input" id="customFile">
             <label class="custom-file-label" for="customFile">Şəkil seç</label>
           </div>
          

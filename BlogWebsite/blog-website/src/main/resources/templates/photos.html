@@ -33,7 +33,9 @@
   <body  > 
       <div th:replace="menu :: menu"></div> 
 
-
+<div class="container jumbotron" style="background-color: aquamarine;">
+  <img th:each="image : ${images}" class="computer-img" style="margin: 20px;" th:src="@{'/files/'+${image.image}}">
+</div>
 
 
 
